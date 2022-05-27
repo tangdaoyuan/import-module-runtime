@@ -11,7 +11,6 @@ export function findNodeModule(modulePath: string, _options?: Options): NodeModu
   try {
     const rawCjsCode = transform(mockFilePath)
     const mod = new _module(mockFilePath) as ExposeNodeModule
-    mod.paths = module.paths
     mod.filename = fileName
     mod._compile(rawCjsCode, fileName)
     return mod
