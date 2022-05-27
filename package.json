@@ -45,6 +45,9 @@
     "url": "https://github.com/tangdaoyuan/import-module-runtime/issues"
   },
   "homepage": "https://github.com/tangdaoyuan/import-module-runtime#readme",
+  "peerDependencies": {
+    "esbuild": "*"
+  },
   "devDependencies": {
     "@suger-tdy/eslint-config": "1.1.0",
     "bumpp": "7.1.1",
