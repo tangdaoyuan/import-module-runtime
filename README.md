@@ -11,9 +11,9 @@ export default 'Hello, world!'
 
 ```ts
 // ./transform.ts
-import { fileURLToPath } from 'import-module-runtime'
+import { findNodeModule } from 'import-module-runtime'
 
-const mod = fileURLToPath(new URL('./module.ts'))
+const mod = findNodeModule(new URL('./module.ts'))
 
 console.log(mod.exports.default)
 // Hello, world!
