@@ -12,7 +12,7 @@ export function findNodeModule(modulePath: string, _options?: Options): NodeModu
     const rawCjsCode = transform(mockFilePath)
     const mod = new _module(mockFilePath) as ExposeNodeModule
     mod.filename = fileName
-    mod._compile(rawCjsCode, fileName)
+    mod._compile(rawCjsCode, mockFilePath)
     return mod
   }
   catch (error) {

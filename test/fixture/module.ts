@@ -1,3 +1,5 @@
-export default () => {
-  return 1
-}
+import mod from '../../fixture/module'
+
+export default mod
+
+export * from '../../fixture/module'

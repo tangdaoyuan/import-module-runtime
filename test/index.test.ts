@@ -1,10 +1,23 @@
 import { fileURLToPath } from 'node:url'
-import { expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { findNodeModule } from '@'
 
-it('runs', () => {
-  const mod = findNodeModule(fileURLToPath(new URL('./fixture/module.ts', import.meta.url)))
-  expect(mod).not.toBeNull()
-  expect(mod?.exports).toHaveProperty('default')
-  expect(mod?.exports.default()).toBe(1)
+describe('findNodeModule', () => {
+  it('basic works', () => {
+    const mod = findNodeModule(fileURLToPath(new URL('./fixture/module.ts', import.meta.url)))
+    expect(mod).not.toBeNull()
+    expect(mod?.exports).toHaveProperty('default')
+    expect(mod?.exports.default()).toBe(1)
+  })
+  it('import.meta.url works', () => {
+    const mod = findNodeModule(fileURLToPath(new URL('./fixture/module.ts', import.meta.url)))
+    expect(mod).not.toBeNull()
+    expect(mod?.exports).toMatchInlineSnapshot(`
+      {
+        "child": [Function],
+        "default": [Function],
+      }
+    `)
+    // expect(mod?.exports.child()).toMatchInlineSnapshot('"/Users/tangdaoyuan/myspaces/ts_stack/import-module-runtime/test/fixture"')
+  })
 })
