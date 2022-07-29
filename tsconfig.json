@@ -20,7 +20,7 @@
       "@/*": [
         "src/*"
       ],
-      "typescript-stater/*": [
+      "import-module-runtime/*": [
         "dist/*"
       ]
     }
