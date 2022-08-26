@@ -1,11 +1,11 @@
 import path from 'path'
-import { buildSync } from 'esbuild'
 import { pathToFileURL } from 'url'
+import { buildSync } from 'esbuild'
 
 export function transform(filePath: string) {
   if (!path.isAbsolute(filePath))
     filePath = path.resolve(filePath)
-  
+
   const _importMetaUrl = pathToFileURL(path.dirname(filePath)).href
   const result = buildSync({
     entryPoints: [filePath],
