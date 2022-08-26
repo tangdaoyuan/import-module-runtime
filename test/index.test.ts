@@ -18,6 +18,5 @@ describe('findNodeModule', () => {
         "default": [Function],
       }
     `)
-    // expect(mod?.exports.child()).toMatchInlineSnapshot('"/Users/tangdaoyuan/myspaces/ts_stack/import-module-runtime/test/fixture"')
   })
 })

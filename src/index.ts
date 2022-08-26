@@ -9,8 +9,6 @@ export function findNodeModule(modulePath: string, _options?: Options): NodeModu
   const fileName = path.basename(mockFilePath)
 
   try {
-    // eslint-disable-next-line no-console
-    console.log(mockFilePath)
     const rawCjsCode = transform(mockFilePath)
     const mod = new _module(mockFilePath) as ExposeNodeModule
     mod.filename = fileName
